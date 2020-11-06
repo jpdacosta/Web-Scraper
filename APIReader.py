@@ -39,3 +39,13 @@ headers = {
 
 response = req.request("GET", url, headers=headers, params=querystring)
 print(response.text)
+#Only gets the values from the city key in the dictionary
+# print(response.json()['city'])
+# # from the city key it gets the vaue from the name key
+# print(response.json()['city']['name'])
+print(response.json()['city']['coord']['lon'])
+print(response.json()['city']['population'])
+# return the first day of data from the list
+print(response.json()['list'][0])
+# Returns the timestamp stored in the dt key of the list key
+print(response.json()['list'][0]['dt'])
